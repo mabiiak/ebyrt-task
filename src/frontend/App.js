@@ -1,12 +1,10 @@
+import Home from './pages/Home';
+
 function App() {
   return (
-    <div>
-      <header>
-        <p>
-          Olá mundo!
-        </p>
-      </header>
-    </div>
+    <>
+      <Home />
+    </>
   );
 }
 
