@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Create from '../components/Create';
 import Header from '../components/Header';
-import TaskCard from '../components/TaskCard';
+import RenderTask from '../components/RenderTask';
 
 class Home extends Component {
   render() {
@@ -9,7 +9,7 @@ class Home extends Component {
       <>
         <Header />
         <Create />
-        <TaskCard />
+        <RenderTask />
       </>
     )
   }
