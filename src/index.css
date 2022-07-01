@@ -5,6 +5,7 @@ body {
   padding: 0;
 }
 
-button, input, h1, h3 {
+button, input, h1, h3, h5, label {
   letter-spacing: 10px;
+  text-transform: uppercase;
 }

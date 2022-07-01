@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
+import { Task } from '../styles/cardTask';
 
 class TaskCard extends Component {
   render() {
     return (
-      <>
-        <div>
-          <h3>T I T L E</h3>
-          <h4>2 5 - 0 6 - 2 2</h4>
+      <Task>
+        <div id='title'>
+          <h3>TITLE</h3>
+          <h5>25-06-22</h5>
         </div>
-        <div>
-          <button>E D I T A R</button>
-          <button>E X C L U I R</button>
+        <div id='options'>
+          <label for='pendente'>
+            <input type='radio' name='status' id='pendente'/>
+            Pendente
+          </label>
+          <label for='andamento'>
+            <input type='radio' name='status' id='andamento'/>
+            Em andamento
+          </label>
+          <label for='Concluído'>
+            <input type='radio' name='status' id='Concluído'/>
+            concluído
+          </label>
         </div>
-        <p>
-          D E S C R I C A O
-        </p>
-        <div>
-          <input type='radio' name='status' id='pendente'/>
-          <label for='pendente'>P E N D E N T E</label>
-          <input type='radio' name='status' id='andamento'/>
-          <label for='andamento'>E M A N D A M E N T O</label>
-          <input type='radio' name='status' id='Concluído'/>
-          <label for='Concluído'>C O N C L U I D O</label>
+        <div id='buttons'>
+          <button>EDITAR</button>
+          <button>DELETAR</button>
         </div>
-      </>
+      </Task>
     )
   }
 }
