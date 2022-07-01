@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { secondBg } from './colors';
+import { secondBg, detail } from './colors';
 
 export const HeaderStyle = styled.header`
   background-color: ${ secondBg };
@@ -25,8 +25,15 @@ export const HeaderStyle = styled.header`
         border: none;
         background-color: ${ secondBg };
         color: white;
-        margin-left: 15px;
+        height: 30px;
+        margin-left: 5px;
+        text-align: center;
+        width: 120px;
       }
+
+      button:active {
+      background-color: ${ detail };
+    }
     }
   }
 `;
