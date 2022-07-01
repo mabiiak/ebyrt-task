@@ -6,20 +6,27 @@ export const HeaderStyle = styled.header`
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  padding: 10px;
 
   h1 {
-    margin-left: 5%;
+    margin-left: 1%;
   }
 
   div {
     align-items: flex-end;
     display: flex;
     flex-direction: column;
-    margin-right: 5%;
+    margin-right: 1%;
 
     div {
       flex-direction: row;
+
+      button {
+        border: none;
+        background-color: ${ secondBg };
+        color: white;
+        margin-left: 15px;
+      }
     }
   }
 `;
