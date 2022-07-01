@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import { secondBg } from './colors';
 
 export const HeaderStyle = styled.header`
-  background-color: #292929;
+  background-color: ${ secondBg };
   color: white;
   display: flex;
   justify-content: space-between;
-  letter-spacing: 15px;
   padding: 5px;
 
   h1 {
