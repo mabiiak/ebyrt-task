@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import { HeaderStyle } from '../styles/header';
 
 class Header extends Component {
   render() {
     return (
-      <header>
-        <h1>E B Y R T - T A S K S</h1>
+      <HeaderStyle>
+        <h1>EBYRT - TASKS</h1>
         <div>
-          <h3>
-            O R D E R
-          </h3>
-          <button>D A T E</button>
-          <button>N A M E</button>
-          <button>S T A T U S</button>
+          <h3> ORDER </h3>
+          <div>
+            <button>DATE</button>
+            <button>NAME</button>
+            <button>STATUS</button>
+          </div>
         </div>
-      </header>
+      </HeaderStyle>
     )
   }
 }
