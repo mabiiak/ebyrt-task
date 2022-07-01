@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CardCreate } from '../styles/cardTask';
 
 class Create extends Component {
   constructor() {
@@ -25,24 +26,16 @@ class Create extends Component {
 
   render() {
     return (
-      <>
-        <h3>
-          N E W T A S K
-        </h3>
+      <CardCreate>
+        <h3> NEW TASK </h3>
         <input
           type='text'
           name='title'
           onChange={ this.handleChange }
-          placeholder='T I T L E'
+          placeholder='TITLE'
         />
-        <input
-          type='text'
-          name='description'
-          onChange={ this.handleChange }
-          placeholder='D E S C R I P T I O N'
-        />
-        <button onClick={ this.createButton }>C R E A T E</button>
-      </>
+        <button onClick={ this.createButton }>CREATE</button>
+      </CardCreate>
     )
   }
 }
