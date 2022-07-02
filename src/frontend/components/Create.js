@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import { CardCreate } from '../styles/cardTask';
-import getStorage from '../utils/localStorage';
 
 class Create extends Component {
   constructor() {
     super();
 
     this.handleChange = this.handleChange.bind(this);
-    this.createButton = this.createButton.bind(this);
-    this.getDate = this.getDate.bind(this);
+    this.clickButton = this.clickButton.bind(this);
 
-    this.state = {
-      title: '',
-    }
+    this.state = { title: '' };
   }
 
   handleChange({ target }) {
@@ -20,26 +16,10 @@ class Create extends Component {
     this.setState({ [name]: value });
   }
 
-  getDate() {
-    const date =  Date().split(' ');
-    const dateObj = { day: date[2], month: date[1] }
+  clickButton(title) {
+    const { createButton } = this.props;
 
-    return dateObj;
-  }
-
-  createButton() {
-    const { title } = this.state;
-    const key = 'tasks';
-    const date = this.getDate();
-        
-    const local = getStorage(key);
-
-    if (local !== null) {
-      localStorage.setItem(key, JSON.stringify([...local, { title, date }]));
-    } else {
-      localStorage.setItem(key, JSON.stringify([{ title, date }]));
-    }
-
+    createButton(title);
     this.setState({ title: '' })
   }
 
@@ -55,7 +35,7 @@ class Create extends Component {
           placeholder='TITLE'
           value={ title }
         />
-        <button onClick={ this.createButton }>CREATE</button>
+        <button onClick={ () => this.clickButton(title) }>CREATE</button>
       </CardCreate>
     )
   }
