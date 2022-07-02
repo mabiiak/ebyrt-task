@@ -1,17 +1,47 @@
 import React, { Component } from 'react';
-import Create from '../components/Create';
 import Header from '../components/Header';
-import RenderTask from '../components/RenderTask';
+import Create from '../components/Create';
+import RenderCard from '../components/RenderCard';
+
 import { Total } from '../styles/render';
 
+import getStorage from '../utils/localStorage';
+import getDate from '../utils/createDate';
+
 class Home extends Component {
+  constructor() {
+    super()
+
+    this.getDate = this.getDate.bind(this);
+    this.createButton = this.createButton.bind(this);
+
+    this.state = { totalTasks: [] };
+  }
+
+  createButton(title) {
+    const key = 'tasks';
+    const date = getDate();
+        
+    const local = getStorage(key);
+
+    if (local !== null) {
+      localStorage
+      .setItem(key, JSON.stringify([...local, { title, status: 'pendente', date }]));
+    } else {
+      localStorage
+      .setItem(key, JSON.stringify([{ title, status: 'pendente', date }]));
+    }
+
+    this.setState({ totalTasks: getStorage(key) });
+  }
+
   render() {
     return (
       <>
         <Header />
         <Total>
-          <Create />
-          <RenderTask />
+          <Create createButton={ this.createButton }/>
+          <RenderCard tasks={ this.state.totalTasks } />
         </Total>
       </>
     )
