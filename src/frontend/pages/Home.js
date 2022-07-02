@@ -11,8 +11,6 @@ import getDate from '../utils/createDate';
 class Home extends Component {
   constructor() {
     super()
-
-    this.getDate = this.getDate.bind(this);
     this.createButton = this.createButton.bind(this);
 
     this.state = { totalTasks: [] };
