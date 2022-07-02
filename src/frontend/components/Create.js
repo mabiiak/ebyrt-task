@@ -31,15 +31,13 @@ class Create extends Component {
     const { title } = this.state;
     const key = 'tasks';
     const date = this.getDate();
-    
-    const newTask = { title, date };
-    
+        
     const local = getStorage(key);
 
     if (local !== null) {
-      localStorage.setItem(key, JSON.stringify([...local, { newTask }]));
+      localStorage.setItem(key, JSON.stringify([...local, { title, date }]));
     } else {
-      localStorage.setItem(key, JSON.stringify([{ newTask }]));
+      localStorage.setItem(key, JSON.stringify([{ title, date }]));
     }
 
     this.setState({ title: '' })
