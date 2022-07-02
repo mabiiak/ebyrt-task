@@ -9,3 +9,7 @@ button, input, h1, h3, h5, label {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
+
+input {
+  text-transform: none;
+}
