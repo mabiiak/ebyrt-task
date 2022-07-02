@@ -47,36 +47,30 @@ export const Task = styled.div`
   margin: 1%;
   width: 22%;
   text-align: center;
-
+  justify-content: center;
+  
   #title {
     color: ${ secondBg };
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     margin-left: 6%;
     margin-right: 5%;
-  }
 
-  #options {
-    align-items: start;
-    color: ${ secondBg };
-    display:flex;
-    flex-direction: column;
-    margin: 0 5% 5% 5%;
-    
-    input {
-      margin-right: 10px;
-    }
-
-    label {
-      margin-bottom: 5px;
-      font-size: 12px;
+    h3 {
+      margin-bottom: 0;
     }
   }
 
-  #buttons {
+  #second-line {
     display: flex;
     margin: 0 7% 0 4%;
 
+    select {
+      border: none;
+      text-align: center;
+    }
+    
     button {
       background-color: ${ secondBg };
       border: none;
@@ -84,6 +78,11 @@ export const Task = styled.div`
       height: 50px;
       width: 50%;
       margin-left: 5px;
+
+      img {
+        height: 85%;
+        width: 55%;
+      }
     }
 
     button:active {
