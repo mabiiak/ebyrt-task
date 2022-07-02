@@ -12,6 +12,7 @@ class Home extends Component {
   constructor() {
     super()
     this.createButton = this.createButton.bind(this);
+    this.deleteTask = this.deleteTask.bind(this);
 
     this.state = { totalTasks: [] };
   }
@@ -31,6 +32,16 @@ class Home extends Component {
     }
 
     this.setState({ totalTasks: getStorage(key) });
+  };
+
+  deleteTask({ target }) {
+    const { totalTasks } = this.state;
+    const { id } = target;
+
+    const filter = totalTasks.filter((task) => task.title !== id);
+
+    this.setState({ totalTasks: filter });
+    localStorage.setItem('tasks', JSON.stringify(filter));
   }
 
   render() {
@@ -39,7 +50,10 @@ class Home extends Component {
         <Header />
         <Total>
           <Create createButton={ this.createButton }/>
-          <RenderCard tasks={ this.state.totalTasks } />
+          <RenderCard
+            tasks={ this.state.totalTasks }
+            deleteTask={ this.deleteTask }
+          />
         </Total>
       </>
     )

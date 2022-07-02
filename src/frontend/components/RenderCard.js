@@ -15,7 +15,7 @@ class RenderCard extends Component {
   }
 
   render() {
-    const { tasks } = this.props;
+    const { tasks, deleteTask } = this.props;
     return (
       tasks &&
         tasks.map((task, index) => (
@@ -31,10 +31,19 @@ class RenderCard extends Component {
                 <option value='concluído'>concluído</option>
               </select>
               <button>
-                <img src={ Trash } alt='icon trash'/>
+                <img
+                  src={ Edit } 
+                  id={ task.title }
+                  alt='icon edit'
+                />
               </button>
               <button>
-                <img src={ Edit } alt='icon trash'/>
+                <img
+                  src={ Trash }
+                  id={ task.title }
+                  alt='icon trash'
+                  onClick={ deleteTask }
+                />
               </button>
             </div>
           </Task>
