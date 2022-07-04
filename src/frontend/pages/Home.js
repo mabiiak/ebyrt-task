@@ -13,6 +13,7 @@ class Home extends Component {
     super()
     this.createButton = this.createButton.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
+    this.changeStatus = this.changeStatus.bind(this);
 
     this.state = { totalTasks: getStorage('tasks') };
   }
@@ -20,12 +21,11 @@ class Home extends Component {
   createButton(title) {
     const key = 'tasks';
     const date = getDate();
-        
-    const local = getStorage(key);
+    const { totalTasks } = this.state;
 
-    if (local !== null) {
+    if (totalTasks !== null) {
       localStorage
-      .setItem(key, JSON.stringify([...local, { title, status: 'pendente', date }]));
+      .setItem(key, JSON.stringify([...totalTasks, { title, status: 'pendente', date }]));
     } else {
       localStorage
       .setItem(key, JSON.stringify([{ title, status: 'pendente', date }]));
@@ -33,6 +33,18 @@ class Home extends Component {
 
     this.setState({ totalTasks: getStorage(key) });
   };
+
+  changeStatus({ target }) {
+    const { totalTasks } = this.state;
+    const { id, value } = target;
+
+    const filterRemove = totalTasks.filter((task) => task.title !== id);
+    const editItem = totalTasks.filter((task) => task.title === id);
+    editItem[0].status = value;
+
+    this.setState({ totalTasks: [...filterRemove, ...editItem] });
+    localStorage.setItem('tasks', JSON.stringify(totalTasks));
+  }
 
   deleteTask({ target }) {
     const { totalTasks } = this.state;
@@ -53,6 +65,7 @@ class Home extends Component {
           <RenderCard
             tasks={ this.state.totalTasks }
             deleteTask={ this.deleteTask }
+            changeStatus={ this.changeStatus }
           />
         </Total>
       </>
