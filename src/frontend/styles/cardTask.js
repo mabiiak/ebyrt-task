@@ -48,6 +48,10 @@ export const Task = styled.div`
   width: 22%;
   text-align: center;
   justify-content: center;
+
+  #concluído { 
+    text-decoration: line-through;
+  }
   
   #title {
     color: ${ secondBg };
@@ -70,7 +74,7 @@ export const Task = styled.div`
       border: none;
       text-align: center;
     }
-    
+
     button {
       background-color: ${ secondBg };
       border: none;
@@ -78,7 +82,7 @@ export const Task = styled.div`
       height: 50px;
       width: 50%;
       margin-left: 5px;
-
+      
       img {
         height: 85%;
         width: 55%;
