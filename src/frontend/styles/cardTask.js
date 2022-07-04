@@ -40,7 +40,7 @@ export const CardCreate = styled.div`
   
   @media screen and (max-width: 800px) {
     height: 240px;
-    width: 40%;
+    width: 60%;
   }
 `;
 
@@ -108,7 +108,7 @@ export const Task = styled.div`
 
   @media screen and (max-width: 800px) {
     height: 240px;
-    width: 40%;
+    width: 60%;
 
     #second-line {
       display: flex;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Task } from '../styles/cardTask';
 import Trash from '../images/lixeira.png';
-import Edit from '../images/editar.png';
+// import Edit from '../images/editar.png';
 
 class RenderCard extends Component {
   render() {
