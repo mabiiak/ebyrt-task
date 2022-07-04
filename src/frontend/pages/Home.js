@@ -14,7 +14,7 @@ class Home extends Component {
     this.createButton = this.createButton.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
 
-    this.state = { totalTasks: [] };
+    this.state = { totalTasks: getStorage('tasks') };
   }
 
   createButton(title) {
