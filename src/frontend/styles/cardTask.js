@@ -37,6 +37,11 @@ export const CardCreate = styled.div`
   button:active {
     background-color: ${ detail };
   }
+  
+  @media screen and (max-width: 800px) {
+    height: 240px;
+    width: 40%;
+  }
 `;
 
 export const Task = styled.div`
@@ -63,6 +68,13 @@ export const Task = styled.div`
 
     h3 {
       margin-bottom: 0;
+      width: 100%;
+      word-wrap: break-word;
+    }
+
+    h5 {
+      width: 100%;
+      word-wrap: break-word;
     }
   }
 
@@ -91,6 +103,41 @@ export const Task = styled.div`
 
     button:active {
       background-color: ${ detail };
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    height: 240px;
+    width: 40%;
+
+    #second-line {
+      display: flex;
+      flex-direction: column;
+      margin: 0 7% 0 4%;
+
+      select {
+        border: none;
+        text-align: center;
+        width: 90%;
+        height: 30px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+      }
+
+      button {
+        background-color: ${ secondBg };
+        border: none;
+        color: white;
+        height: 30px;
+        width: 90%;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        
+        img {
+          height: 70%;
+          width: 20%;
+        }
+      }
     }
   }
 `;
