@@ -35,13 +35,13 @@ class RenderCard extends Component {
                   Concluído
                 </option>
               </select>
-              <button>
+              {/* <button>
                 <img
                   src={ Edit }
                   id={ task.title }
                   alt='icon edit'
                 />
-              </button>
+              </button> */}
               <button>
                 <img
                   src={ Trash }
