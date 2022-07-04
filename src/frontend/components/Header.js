@@ -6,14 +6,6 @@ class Header extends Component {
     return (
       <HeaderStyle>
         <h1>EBYRT - TASKS</h1>
-        <div>
-          <h3> ORDER </h3>
-          <div>
-            <button>DATE</button>
-            <button>NAME</button>
-            <button>STATUS</button>
-          </div>
-        </div>
       </HeaderStyle>
     )
   }

@@ -5,14 +5,14 @@ export const HeaderStyle = styled.header`
   background-color: ${ secondBg };
   color: white;
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  justify-content: center;
+  /* padding: 10px; */
 
   h1 {
     margin-left: 1%;
   }
 
-  div {
+  /* div {
     align-items: flex-end;
     display: flex;
     flex-direction: column;
@@ -35,5 +35,5 @@ export const HeaderStyle = styled.header`
       background-color: ${ detail };
     }
     }
-  }
+  } */
 `;
