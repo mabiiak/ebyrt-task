@@ -1,3 +1,4 @@
+#E B Y R T - T A S K
 # Boas vindas ao repositório do projeto Ebyrt Task!
 
 Este é um projeto desenvolvido durante o curso da Trybe, com o objetivo de criar uma aplicação full stack para fazer o gerenciamento de tarefas.
@@ -44,4 +45,3 @@ Para visualizar o Front-end da aplicação `npm start`
     Inicialização
    </summary>
 </details>
-
